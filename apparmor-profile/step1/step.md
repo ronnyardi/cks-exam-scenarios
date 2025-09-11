@@ -56,9 +56,11 @@ You will need to apply the profile to a Pod and verify that the container cannot
     metadata:
       name: deny-write-pod
       namespace: apparmor
-      annotations:
-        container.apparmor.security.beta.kubernetes.io/deny-write-container: localhost/deny-write-profile
     spec:
+      securityContext:
+        appArmorProfile:
+          type: Localhost
+          localhostProfile: deny-write-profile
       containers:
       - name: deny-write-container
         image: busybox
