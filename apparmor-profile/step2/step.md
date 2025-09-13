@@ -1,13 +1,16 @@
 # Objective 2: Block chmod Execution
 
-The second objective is to block the execution of `chmod` commands within the container. The custom AppArmor profile already denies this operation. You will now apply this profile to another Pod and verify that the `chmod` command is blocked.
+The second objective is to block the execution of `chmod` commands within the container. The previous AppArmor profile is already denies this operation. You will now apply this profile to another Pod and verify that the `chmod` command is blocked.
 
 
-Create a pod with name `block-chmod-pod` using `busybox` image and add a command as the below:
+Create a pod with the following information:
 
-```
-sh -c chmod 777 /tmp
-```
+* name: `block-chmod-pod` 
+* namespace: `apparmor`
+* image: `busybox` 
+* command : `sh -c chmod 777 /tmp`
+
+Check the pod status and confirm if the pod is either Running or not. Then concludes your thoughts.
 
 <details>
   <summary>Solution</summary>
