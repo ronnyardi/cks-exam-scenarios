@@ -1,0 +1,27 @@
+{
+  "title": "[Cluster Hardening] Disable automounting of service account token",
+  "description": "Disable automounting of service account token for hardening the kubernetes cluster.",
+  "details": {
+  "intro": {
+    "text": "intro.md"
+  },
+  "steps": [
+    {
+      "title": "Default Behavior of Service Account Token Mounting",
+      "text": "step1/step.md",
+      "verify": "step1/verify.sh"
+    },
+    {
+      "title": "Disable Automounting of Service Account Token",
+      "text": "step2/step.md",
+      "verify": "step2/verify.sh"
+    }
+  ],
+  "finish": {
+    "text": "finish.md"
+  }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
