@@ -1,5 +1,5 @@
 {
-  "title": "[Minimizing Microservice Vulnerabilities] Container Non-Root",
+  "title": "[Minimize Microservice Vulnerabilities] Container Non-Root",
   "description": "Ensure containers run as non-root users to minimize the risk of privilege escalation.",
   "details": {
   "intro": {
