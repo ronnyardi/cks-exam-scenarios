@@ -1,0 +1,24 @@
+{
+  "title": "[Cluster Hardening] Validate User Access and Fix the Problems",
+  "description": "Check the user certificate expiration and validate the user access to a specific resource in a namespace, then fix the problems.",
+  "details": {
+  "intro": {
+    "text": "intro.md",
+    "background": "background.sh",
+    "foreground": "foreground.sh"
+  },
+  "steps": [
+    {
+      "title": "Check User Certificate Expiration",
+      "text": "step1/step.md",
+      "verify": "step1/verify.sh"
+    }
+  ],
+  "finish": {
+    "text": "finish.md"
+  }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
