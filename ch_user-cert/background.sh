@@ -7,7 +7,7 @@ cd bg
 
 USER="user-dev"
 CLUSTER_NAME="kubernetes"
-CONTEXT_NAME="${USER}-context"
+CONTEXT_NAME="${USER}-ctx"
 CA_CERT="/etc/kubernetes/pki/ca.crt"
 CA_KEY="/etc/kubernetes/pki/ca.key"
 CLUSTER_SERVER="https://127.0.0.1:6443"
