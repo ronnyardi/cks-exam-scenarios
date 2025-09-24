@@ -10,7 +10,7 @@ Check and resolve the access issues so that the `user-dev` is able to get, watch
 1. Switch context and test view pods in namespace default:
     ```bash
     kubectl config get-contexts               # See the available contexts
-    kubectl config use-contexts use-dev-ctx   # Change context
+    kubectl config use-context use-dev-ctx   # Change context
     kubectl get pod
     ```
 
@@ -108,7 +108,7 @@ Check and resolve the access issues so that the `user-dev` is able to get, watch
     ```
 5. We have got our hands dirty! Let's try the step 1 again to verify:
     ```
-    kubectl config use-contexts user-dev-ctx
+    kubectl config use-context user-dev-ctx
     kubectl get pod
 
     Error from server (Forbidden): pods is forbidden: User "user-dev" cannot list resource "pods" in API group "" in the namespace "default" 
@@ -121,7 +121,7 @@ Check and resolve the access issues so that the `user-dev` is able to get, watch
 6. Check the role and rolebinding in the `default` namespace for the `user-dev` regarding viewing pods:
     ```bash
     # Always use kubernetes-admin@kubernetes for administrating purpose
-    kubectl config use-contexts kubernetes-admin@kubernetes
+    kubectl config use-context kubernetes-admin@kubernetes
 
     kubectl get role,rolebinding 
     No resources found in default namespace.
@@ -129,7 +129,7 @@ Check and resolve the access issues so that the `user-dev` is able to get, watch
 
     OK, we need to create a new role and bind the role to the user-dev in namespace default.
     ```bash
-    kubectl create role -n default --verb get,watch,list --resource pod
+    kubectl create role pod-viewer -n default --verb get,watch,list --resource pod
     kubectl create rolebinding pod-viewer-bind -n default --role pod-viewer --user user-dev
 
     kubectl get role,rolebinding # Check it
