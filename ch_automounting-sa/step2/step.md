@@ -61,7 +61,7 @@ YES,NO,NO
         namespace: poc-sa-mount
       spec:
         serviceAccountName: sa-secure
-        automountServiceAccountToken: true
+        automountServiceAccountToken: false
         containers:
         - name: busybox
           image: busybox
@@ -72,7 +72,7 @@ YES,NO,NO
       kubectl apply -f q2-secure-sa.yaml
       kubectl exec -n poc-sa-mount q2-secure-sa -- ls /var/run/secrets/kubernetes.io/serviceaccount/
       ```
-      It returns the files! `token`, `ca.crt`, `namespace`, that means the token is not mounted, then the answer is `YES`
+      That means the token is not mounted, then the answer is `NO`
 
   5. **Q3: Create a busybox pod in `default` namespace with automount disabled:**
 
@@ -99,7 +99,7 @@ YES,NO,NO
   6. **Write answers to `/tmp/ch-answer.txt`:**
 
       ```bash
-      echo "NO,YES,NO" > /tmp/ch-answer.txt
+      echo "NO,NO,NO" > /tmp/ch-answer.txt
       ```
   
   7. **Important Notes**:
