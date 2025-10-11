@@ -59,16 +59,16 @@ Additionally, there is a pod named `metadata-accessor` in the `default` namespac
 3. Apply network policies and test the result
     ```bash
     kubectl exec metadata-tester -- curl -s -m5 http://169.254.169.254
+    command terminated with exit code 28
+
+    kubectl exec metadata-accessor -- curl -s -m5 http://169.254.169.254
     <html>
       <head><title>Mock Metadata</title></head>
       <body>
         <h1>This is a mock AWS metadata server, welcome?</h1>
       </body>
     </html>
-
-    kubectl exec metadata-accessor -- curl -s -m5 http://169.254.169.254
-    command terminated with exit code 28
     ```
-    Access for pod metadata-accessor is success, meanwhile metadata-tester is failed due to the applied network policy in step 1
+    Access for pod metadata-accessor is SUCCESS, meanwhile metadata-tester is FAILED due to the applied network policy in step 1
 
 </details>
