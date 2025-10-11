@@ -6,7 +6,7 @@ In the namespace `poc-sa-mount`, create a new service account `sa-secure` with a
 
   * [Q1] Create a running busybox pod, name it `q1-secure-sa`, and attach the service account `sa-secure` to it. Verify if the service account token is mounted in the pod filesystem or not? (YES/NO)
 
-  * [Q2] Create a running busybox pod, name it `q2-secure-sa` with automount disabled in the pod spec, and attach the service account `sa-secure` to it. Verify if the service account token is mounted in the pod filesystem or not? (YES/NO)
+  * [Q2] Create a running busybox pod, name it `q2-secure-sa` with automount enabled in the pod spec, and attach the service account `sa-secure` to it. Verify if the service account token is mounted in the pod filesystem or not? (YES/NO)
 
   * [Q3] In the `default` namespace, create a running busybox pod, name it `q3-secure-sa` with automount disabled in the pod spec. Verify if the service account token is mounted in the pod filesystem or not? (YES/NO)
 
