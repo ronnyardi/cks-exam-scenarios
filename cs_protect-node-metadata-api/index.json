@@ -1,0 +1,24 @@
+{
+  "title": "[Cluster Setup] Protect Node Metadata API",
+  "description": "Restrict access to the node metadata API for enhanced security.",
+  "details": {
+  "intro": {
+    "text": "intro.md",
+    "background": "background.sh",
+    "foreground": "foreground.sh"
+  },
+  "steps": [
+    {
+      "title": "Protect AWS Node Metadata API",
+      "text": "step1/step.md",
+      "verify": "step1/verify.sh"
+    }
+  ],
+  "finish": {
+    "text": "finish.md"
+  }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
