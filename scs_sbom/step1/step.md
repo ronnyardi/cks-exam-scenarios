@@ -11,11 +11,11 @@ docker save morc-api:<version-patched> -o /opt/morc-api/morc-api_<version-patche
 ctr -n k8s.io images import /opt/morc-api/morc-api_<version-patched>.tar
 ```
 
-Then edit the deployment manifest to use the newly morc-api image with the new tag you've choosen. Ensure that the deployment is running correctly. Verify the new image by using Trivy scanner and ensure it has 0 vulnerabilities. Lastly, export the SBOM document as CycloneDX into `/tmp/morc-api-patched.json`
+Then edit the deployment manifest to use the newly morc-api image with the new tag you've choosen. Ensure that the deployment is running correctly. Verify the new image by using Trivy scanner and ensure it has 0 vulnerabilities. Lastly, export the SBOM document as JSON CycloneDX with `--security-checks vuln` option enabled. Save into `/tmp/morc-api-patched.json`
 
 Hint:
 ```
-trivy image morc-api:<version-patched> --format cyclonedx --output /tmp/morc-api-patched.json
+trivy image morc-api:<version-patched> --security-checks vuln --format cyclonedx --output /tmp/morc-api-patched.json
 ```
 
 <details>
@@ -140,7 +140,7 @@ trivy image morc-api:<version-patched> --format cyclonedx --output /tmp/morc-api
   $ ctr -n k8s.io images import morc-api_0.1-5_patched.tar
   unpacking docker.io/library/morc-api:0.1-5_patched (sha256:3f8eaced5c379a955f61f00c5177dffbde3b3a4effdb9e3662886209f8ede2f5)...done
 
-  $ crictl images
+  $ crictl images | grep morc
   docker.io/library/morc-api                 0.1-5               2e6fa8f233683       53.9MB
   docker.io/library/morc-api                 0.1-5_patched       ca99f2af994ff       54.2MB  # New image listed
   
@@ -184,7 +184,7 @@ trivy image morc-api:<version-patched> --format cyclonedx --output /tmp/morc-api
   ```
 * Generate the SBOM document with format CycloneDX:
   ```bash
-  $ trivy image morc-api:0.1-5_patched --format cyclonedx --output /tmp/morc-api-patched.json
+  $ trivy image morc-api:0.1-5_patched --security-checks vuln --format cyclonedx --output /tmp/morc-api-patched.json
 
   $ cat /tmp/morc-api-patched.json
   ...

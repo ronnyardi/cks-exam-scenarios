@@ -1,6 +1,6 @@
 {
     "title": "[Supply Chain Security] Trivy and SBOM",
-    "description": "Investigate a workload in the cluster that was flagged by the DevSecOps team for potential vulnerabilities. Your task is to generate a Software Bill of Materials (SBOM) from the running Pod, identify vulnerable components, and patch the workload by updating the image to a secure version.",
+    "description": "Use Trivy to scan the container image and generate a Software Bill of Materials (SBOM) to identify and mitigate any security risks.",
     "details": {
     "intro": {
       "text": "intro.md",
