@@ -5,19 +5,6 @@ mkdir -p /opt/morc-api
 cd /opt/morc-api
 
 # Create example Kubernetes YAML files with potential security issues
-cat <<EOF > /opt/morc-api/index.html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Security Warning</title>
-</head>
-<body>
-    <h1>⚠️ Warning!</h1>
-    <p>Your app is vulnerable, please patch ASAP!</p>
-</body>
-</html>
-EOF
-
 cat <<EOF > /opt/morc-api/nginx.conf
 server {
     listen 8989;
@@ -35,7 +22,6 @@ FROM nginx:1.29.0-alpine
 
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY index.html /usr/share/nginx/html/index.html
 
 EXPOSE 8989
 EOF
