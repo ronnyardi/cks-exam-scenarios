@@ -1,6 +1,6 @@
 # Step 2: Configure the API Server to Use the Audit Policy
 
-Enable the minimal audit policy to the kube-apiserver. The Kubernetes API Server manifest is located at `/etc/kubernetes/manifest` in the node where the pod remains.
+Enable the minimal audit policy to the kube-apiserver. The Kubernetes API Server manifest is located at `/etc/kubernetes/manifests` in the node where the pod remains.
 
 Use a directory to save the logs into `/var/log/kubernetes/audit`. This means, you will need to mount a volume inside the pod above.
 
@@ -18,7 +18,7 @@ To test the audit records, try to create a pod, create and delete a configmap or
 
 * Edit the kube-apiserver pod manifest: 
     ```bash
-    vim /etc/kubernetes/manifest/kube-apiserver.yaml
+    vim /etc/kubernetes/manifests/kube-apiserver.yaml
     ```
 
 
