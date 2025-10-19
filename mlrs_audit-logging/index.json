@@ -1,0 +1,27 @@
+{
+  "title": "[Monitoring, Logging, and Runtime Security] Kubernetes Audit Logging",
+  "description": "Configure Kubernetes Audit Logging to monitor and log API server requests for security purposes.",
+  "details": {
+  "intro": {
+    "text": "intro.md"
+  },
+  "steps": [
+    {
+      "title": "Step 1: Create an Audit Policy",
+      "text": "step1/step.md",
+      "verify": "step1/verify.sh"
+    },
+    {
+      "title": "Step 2: Configure the API Server to Use the Audit Policy",
+      "text": "step2/step.md",
+      "verify": "step2/verify.sh"
+    }
+  ],
+  "finish": {
+    "text": "finish.md"
+  }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
