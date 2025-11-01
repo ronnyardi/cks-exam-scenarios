@@ -1,0 +1,24 @@
+{
+  "title": "[Minimize Microservice Vulnerabilities] Pod Security Admission (PSA)",
+  "description": "Implement Pod Security Admission (PSA) to enforce security standards on pods within a specific namespace, ensuring that all deployed pods adhere to defined security policies.",
+  "details": {
+  "intro": {
+    "text": "intro.md",
+    "background": "background.sh",
+    "foreground": "foreground.sh"
+  },
+  "steps": [
+    {
+      "title": "Implement Pod Security Admission (PSA)",
+      "text": "step1/step.md",
+      "verify": "step1/verify.sh"
+    }
+  ],
+  "finish": {
+    "text": "finish.md"
+  }
+  },
+  "backend": {
+    "imageid": "kubernetes-kubeadm-1node"
+  }
+}
