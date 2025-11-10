@@ -1,0 +1,25 @@
+{
+    "title": "[Monitoring, Logging, and Runtime Security] Falco Rules",
+    "description": "Setup and configure Falco rules to catch specific usecase scenario.",
+    "details": {
+    "intro": {
+      "text": "intro.md",
+      "background": "background.sh",
+      "foreground": "foreground.sh"
+    },
+    "steps": [
+      {
+        "title": "Step 1: Setup Falco Rules",
+        "text": "step1/step.md",
+        "verify": "step1/verify.sh"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    }
+    },
+    "backend": {
+      "imageid": "kubernetes-kubeadm-1node"
+    }
+  }
+  
